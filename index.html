@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Year Wishes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        h1 {
+            color: #ff6347;
+        }
+        .form-container {
+            margin: 20px auto;
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            background-color: #ffffff;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .form-container input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #218838;
+        }
+        .celebration {
+            margin-top: 30px;
+        }
+        .cake {
+            width: 150px;
+            display: block;
+            margin: 0 auto;
+        }
+        .balloons {
+            margin-top: 20px;
+        }
+        .balloons img {
+            width: 80px;
+            margin: 0 5px;
+        }
+        .quote {
+            margin-top: 20px;
+            font-style: italic;
+            color: #6c757d;
+        }
+    </style>
+    <script>
+        function displayWishes() {
+            const name = document.getElementById('name').value;
+            if (!name) {
+                alert('Please enter your name!');
+                return;
+            }
+
+            const quotes = [
+                "This is the beginning of anything you want.",
+                "A new year is not just about changing the date but also the direction.",
+                "Every end is a new beginning. Cheers to a fresh start!",
+                "Dream big, start small, but most of all, start.",
+                "The magic in new beginnings is truly the most powerful of them all.",
+                "Celebrate endings—for they precede new beginnings.",
+                "Let your dreams be bigger than your fears, and your actions louder than your words.",
+                "This year, be the light that helps others see.",
+                "365 new days, 365 new chances.",
+                "Embrace the glorious mess that you are and step boldly into the new year.",
+                "Don’t be afraid to give up the good to go for the great.",
+                "Write it on your heart that every day is the best day in the year.",
+                "This year, believe in yourself a little more.",
+                "Out with the old, in with the bold.",
+                "The future belongs to those who believe in the beauty of their dreams.",
+                "New year, new feels, new chances, same dreams, fresh starts.",
+                "You are never too old to set another goal or dream a new dream.",
+                "This year, let go of what’s gone, be grateful for what remains, and look forward to what’s coming.",
+                "Stay close to anything that makes you glad you’re alive.",
+                "Your best chapters are yet to be written."
+            ];
+
+            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+
+            document.getElementById('wish').innerHTML = `Happy New Year, <b>${name}</b>!`;
+            document.getElementById('quote').innerText = randomQuote;
+            document.querySelector('.celebration').style.display = 'block';
+        }
+
+        function updateYear() {
+            const currentYear = new Date().getFullYear();
+            const nextYear = currentYear + 1;
+            document.getElementById('year').innerText = `${currentYear} - ${nextYear}`;
+        }
+
+        window.onload = updateYear;
+    </script>
+</head>
+<body>
+    <h1>🎉 Happy New Year! 🎉</h1>
+    <p>Welcome to the New Year <span id="year"></span></p>
+    <div class="form-container">
+        <input type="text" id="name" placeholder="Enter your name">
+        <button onclick="displayWishes()">Get Your Wish</button>
+    </div>
+
+    <div class="celebration" style="display: none;">
+        <h2 id="wish"></h2>
+        <div class="quote" id="quote"></div>
+        <img src="https://img.freepik.com/premium-photo/cake-new-year-2025_1172145-678.jpg?w=740" alt="Cake" class="cake">
+        <div class="balloons">
+            <img src="https://thumbs.dreamstime.com/z/congratulations-background-birthday-balloons-background-congratulations-background-bright-colourful-background-featuring-292686878.jpg?ct=jpeg" alt="Balloon">
+        </div>
+    </div>
+</body>
+</html>
